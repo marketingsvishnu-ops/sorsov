@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -966,5 +967,1242 @@ footer{
     gap:25px;
 }
 
-.footer-links
+.footer-links a{
+    color:#7f8997;
+    text-decoration:none;
+}
+
+.footer-links a:hover{
+    color:var(--cyan);
+}
+
+/* =========================
+   TO TOP
+========================= */
+
+.top{
+    position:fixed;
+    right:25px;
+    bottom:25px;
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    background:var(--cyan);
+    color:#001014;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+    font-weight:bold;
+    z-index:500;
+    box-shadow:0 0 25px rgba(0,247,255,.4);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:1050px){
+
+    .hero-grid,
+    .about-grid,
+    .experience-box,
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
+
+    .hero-content{
+        text-align:center;
+    }
+
+    .hero-text{
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .hero-buttons{
+        justify-content:center;
+    }
+
+    .hero-visual{
+        height:480px;
+    }
+
+    .stats{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .trainers{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .services,
+    .pricing,
+    .testimonials{
+        grid-template-columns:1fr;
+    }
+
+    .price-card.featured{
+        transform:none;
+    }
+
+    .about-content{
+        text-align:center;
+    }
+
+    .check-list{
+        display:inline-block;
+        text-align:left;
+    }
+
+    .experience-content{
+        text-align:center;
+    }
+
+    .experience-content p{
+        margin:auto;
+    }
+}
+
+@media(max-width:750px){
+
+    section{
+        padding:85px 5%;
+    }
+
+    .nav-links{
+        position:absolute;
+        top:75px;
+        left:5%;
+        right:5%;
+        display:none;
+        flex-direction:column;
+        padding:25px;
+        background:rgba(5,7,14,.97);
+        border:1px solid rgba(0,247,255,.2);
+        border-radius:20px;
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    .menu{
+        display:block;
+    }
+
+    .nav-join{
+        display:none;
+    }
+
+    .hero h1{
+        font-size:58px;
+    }
+
+    .hyper-space{
+        transform:scale(.7);
+    }
+
+    .stats{
+        grid-template-columns:1fr;
+    }
+
+    .trainers{
+        grid-template-columns:1fr;
+    }
+
+    .about-box{
+        width:290px;
+        height:370px;
+    }
+
+    .experience-box{
+        padding:35px 20px;
+    }
+
+    .experience-content h2,
+    .about-content h2,
+    .contact-info h2{
+        font-size:42px;
+    }
+
+    .portal{
+        width:230px;
+        height:230px;
+    }
+
+    .form-row{
+        grid-template-columns:1fr;
+    }
+
+    .footer-inner{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .footer-links{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- =========================
+     NAVBAR
+========================= -->
+
+<header class="navbar">
+
+    <div class="nav-inner">
+
+        <a href="#home" class="logo">
+            NEON<span>FORGE</span>
+        </a>
+
+        <div class="menu" id="menu">
+            ☰
+        </div>
+
+        <ul class="nav-links" id="navLinks">
+
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#trainers">Trainers</a></li>
+            <li><a href="#experience">4D Experience</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#contact">Contact</a></li>
+
+            <li>
+                <a href="#pricing" class="nav-join">
+                    Join Now
+                </a>
+            </li>
+
+        </ul>
+
+    </div>
+
+</header>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero" id="home">
+
+    <div class="glow cyan" style="left:-150px;top:100px;"></div>
+    <div class="glow pink" style="right:-150px;bottom:0;"></div>
+
+    <div class="hero-grid">
+
+        <div class="hero-content">
+
+            <div class="badge">
+                NEXT GENERATION FITNESS
+            </div>
+
+            <h1>
+                TRAIN<br>
+                <span>BEYOND</span><br>
+                LIMITS
+            </h1>
+
+            <p class="hero-text">
+                Welcome to NeonForge — a next-generation fitness
+                environment where strength, technology and immersive
+                4D training come together.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#pricing" class="btn">
+                    Join The Gym →
+                </a>
+
+                <a href="#contact" class="btn btn-outline">
+                    Book Free Trial
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- 4D VISUAL -->
+
+        <div class="hero-visual">
+
+            <div class="hyper-space">
+
+                <div class="hyper-ring"></div>
+                <div class="hyper-ring r2"></div>
+                <div class="hyper-ring r3"></div>
+                <div class="hyper-ring r4"></div>
+
+                <div class="core">
+
+                    <div class="core-face f1"></div>
+                    <div class="core-face f2"></div>
+                    <div class="core-face f3"></div>
+                    <div class="core-face f4"></div>
+                    <div class="core-face f5"></div>
+                    <div class="core-face f6"></div>
+
+                </div>
+
+                <div class="energy e1"></div>
+                <div class="energy e2"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     STATS
+========================= -->
+
+<section class="stats-section">
+
+    <div class="container">
+
+        <div class="stats">
+
+            <div class="stat">
+                <h3>24/7</h3>
+                <p>GYM ACCESS</p>
+            </div>
+
+            <div class="stat">
+                <h3>50+</h3>
+                <p>ADVANCED MACHINES</p>
+            </div>
+
+            <div class="stat">
+                <h3>15</h3>
+                <p>EXPERT TRAINERS</p>
+            </div>
+
+            <div class="stat">
+                <h3>4D</h3>
+                <p>IMMERSIVE TRAINING</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section id="about">
+
+    <div class="container">
+
+        <div class="about-grid">
+
+            <div class="about-visual">
+
+                <div class="about-box"></div>
+
+            </div>
+
+            <div class="about-content">
+
+                <div class="section-heading" style="text-align:left;margin-bottom:25px;">
+
+                    <div class="mini">
+                        ABOUT NEONFORGE
+                    </div>
+
+                    <h2>
+                        FITNESS IN A
+                        <span>NEW DIMENSION.</span>
+                    </h2>
+
+                </div>
+
+                <p>
+                    NeonForge is built for people who refuse to train
+                    like everyone else. Our facility combines advanced
+                    strength equipment, performance coaching and
+                    immersive technology.
+                </p>
+
+                <p>
+                    Every part of the experience is designed to make
+                    training more engaging, measurable and challenging.
+                </p>
+
+                <ul class="check-list">
+                    <li>Advanced strength & conditioning</li>
+                    <li>Professional personal trainers</li>
+                    <li>Performance tracking technology</li>
+                    <li>Recovery and mobility programs</li>
+                    <li>24/7 member access</li>
+                </ul>
+
+                <a href="#services" class="btn">
+                    Explore Services
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SERVICES
+========================= -->
+
+<section id="services">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="mini">
+                WHAT WE OFFER
+            </div>
+
+            <h2>
+                TRAINING SYSTEMS
+            </h2>
+
+            <p>
+                Choose your training path and build the body,
+                strength and performance you want.
+            </p>
+
+        </div>
+
+
+        <div class="services">
+
+            <div class="service">
+
+                <div class="service-icon">🏋️</div>
+
+                <h3>Strength Lab</h3>
+
+                <p>
+                    Structured strength programs using modern
+                    resistance equipment and progressive training.
+                </p>
+
+            </div>
+
+
+            <div class="service">
+
+                <div class="service-icon">⚡</div>
+
+                <h3>Performance Zone</h3>
+
+                <p>
+                    Improve speed, explosive power, agility,
+                    endurance and athletic performance.
+                </p>
+
+            </div>
+
+
+            <div class="service">
+
+                <div class="service-icon">🧠</div>
+
+                <h3>Neural Training</h3>
+
+                <p>
+                    Reaction, coordination and movement-based
+                    workouts designed for total-body performance.
+                </p>
+
+            </div>
+
+
+            <div class="service">
+
+                <div class="service-icon">🔥</div>
+
+                <h3>HIIT Arena</h3>
+
+                <p>
+                    High-intensity sessions combining cardio,
+                    strength and functional movements.
+                </p>
+
+            </div>
+
+
+            <div class="service">
+
+                <div class="service-icon">🧘</div>
+
+                <h3>Recovery Zone</h3>
+
+                <p>
+                    Mobility, stretching and recovery sessions
+                    to support your training routine.
+                </p>
+
+            </div>
+
+
+            <div class="service">
+
+                <div class="service-icon">🥊</div>
+
+                <h3>Combat Fitness</h3>
+
+                <p>
+                    Boxing-inspired conditioning and functional
+                    workouts designed to challenge your whole body.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     TRAINERS
+========================= -->
+
+<section id="trainers">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="mini">
+                MEET THE TEAM
+            </div>
+
+            <h2>
+                EXPERT TRAINERS
+            </h2>
+
+            <p>
+                Get guidance from experienced coaches who can help
+                structure your training and keep you progressing.
+            </p>
+
+        </div>
+
+
+        <div class="trainers">
+
+            <div class="trainer">
+
+                <div class="trainer-avatar">
+                    🏋️
+                </div>
+
+                <div class="trainer-info">
+                    <h3>Alex Carter</h3>
+                    <p>STRENGTH COACH</p>
+                    <small>Strength & Conditioning</small>
+                </div>
+
+            </div>
+
+
+            <div class="trainer">
+
+                <div class="trainer-avatar">
+                    🥊
+                </div>
+
+                <div class="trainer-info">
+                    <h3>Marcus Lee</h3>
+                    <p>PERFORMANCE COACH</p>
+                    <small>Functional Performance</small>
+                </div>
+
+            </div>
+
+
+            <div class="trainer">
+
+                <div class="trainer-avatar">
+                    🧘
+                </div>
+
+                <div class="trainer-info">
+                    <h3>Sophia Ray</h3>
+                    <p>MOBILITY COACH</p>
+                    <small>Mobility & Recovery</small>
+                </div>
+
+            </div>
+
+
+            <div class="trainer">
+
+                <div class="trainer-avatar">
+                    ⚡
+                </div>
+
+                <div class="trainer-info">
+                    <h3>Ryan Cole</h3>
+                    <p>HIIT COACH</p>
+                    <small>Conditioning & HIIT</small>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     4D EXPERIENCE
+========================= -->
+
+<section id="experience" class="experience">
+
+    <div class="container">
+
+        <div class="experience-box">
+
+            <div class="experience-content">
+
+                <div class="mini" style="color:var(--cyan);letter-spacing:5px;">
+                    IMMERSIVE TECHNOLOGY
+                </div>
+
+                <h2>
+                    ENTER THE
+                    <span>4D ZONE.</span>
+                </h2>
+
+                <p>
+                    Our signature 4D training concept combines
+                    movement, depth, lighting, sound and interactive
+                    environments to create a different kind of
+                    workout experience.
+                </p>
+
+                <br>
+
+                <a href="#contact" class="btn">
+                    Book A Trial
+                </a>
+
+            </div>
+
+
+            <div class="experience-visual">
+
+                <div class="portal"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PRICING
+========================= -->
+
+<section id="pricing">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="mini">
+                MEMBERSHIP
+            </div>
+
+            <h2>
+                CHOOSE YOUR PLAN
+            </h2>
+
+            <p>
+                Flexible membership options for different training goals.
+            </p>
+
+        </div>
+
+
+        <div class="pricing">
+
+            <div class="price-card">
+
+                <h3>STARTER</h3>
+
+                <div class="price">
+                    $29 <span>/month</span>
+                </div>
+
+                <ul>
+                    <li>Gym Floor Access</li>
+                    <li>Basic Equipment</li>
+                    <li>Locker Access</li>
+                    <li>Fitness App</li>
+                </ul>
+
+                <a href="#contact"
+                   class="btn plan-btn"
+                   data-plan="Starter">
+                    Choose Starter
+                </a>
+
+            </div>
+
+
+            <div class="price-card featured">
+
+                <h3>QUANTUM</h3>
+
+                <div class="price">
+                    $59 <span>/month</span>
+                </div>
+
+                <ul>
+                    <li>24/7 Gym Access</li>
+                    <li>4D Training Zone</li>
+                    <li>Performance Tracking</li>
+                    <li>1 Trainer Session</li>
+                </ul>
+
+                <a href="#contact"
+                   class="btn plan-btn"
+                   data-plan="Quantum">
+                    Choose Quantum
+                </a>
+
+            </div>
+
+
+            <div class="price-card">
+
+                <h3>INFINITY</h3>
+
+                <div class="price">
+                    $99 <span>/month</span>
+                </div>
+
+                <ul>
+                    <li>Everything in Quantum</li>
+                    <li>Unlimited Coaching</li>
+                    <li>Recovery Zone</li>
+                    <li>Priority Booking</li>
+                </ul>
+
+                <a href="#contact"
+                   class="btn plan-btn"
+                   data-plan="Infinity">
+                    Choose Infinity
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     TESTIMONIALS
+========================= -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="mini">
+                MEMBER EXPERIENCES
+            </div>
+
+            <h2>
+                WHAT MEMBERS SAY
+            </h2>
+
+        </div>
+
+
+        <div class="testimonials">
+
+            <div class="testimonial">
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+                <p>
+                    "The environment is completely different from
+                    a normal gym. The training zones make every
+                    session feel fresh."
+                </p>
+
+                <div class="user">
+                    <div class="user-avatar">J</div>
+
+                    <div>
+                        <h4>Jordan</h4>
+                        <small>Member</small>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="testimonial">
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+                <p>
+                    "The coaches helped me create a structured
+                    routine and the performance tracking keeps
+                    me consistent."
+                </p>
+
+                <div class="user">
+                    <div class="user-avatar">M</div>
+
+                    <div>
+                        <h4>Michael</h4>
+                        <small>Member</small>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="testimonial">
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+                <p>
+                    "I really like the combination of technology,
+                    equipment and coaching. It doesn't feel like
+                    a traditional gym."
+                </p>
+
+                <div class="user">
+                    <div class="user-avatar">A</div>
+
+                    <div>
+                        <h4>Aisha</h4>
+                        <small>Member</small>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section id="contact">
+
+    <div class="container">
+
+        <div class="contact-grid">
+
+            <div class="contact-info">
+
+                <div class="mini" style="color:var(--cyan);letter-spacing:5px;">
+                    GET STARTED
+                </div>
+
+                <h2>
+                    READY TO
+                    <span>TRAIN?</span>
+                </h2>
+
+                <p>
+                    Book your free trial or send us a message.
+                    Select a membership above and the plan will
+                    automatically appear in the form.
+                </p>
+
+
+                <div class="contact-item">
+
+                    <div class="contact-icon">📍</div>
+
+                    <div>
+                        <strong>Location</strong>
+                        <p>Downtown Fitness District</p>
+                    </div>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <div class="contact-icon">📞</div>
+
+                    <div>
+                        <strong>Phone</strong>
+                        <p>+1 555 123 4567</p>
+                    </div>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <div class="contact-icon">✉</div>
+
+                    <div>
+                        <strong>Email</strong>
+                        <p>hello@neonforge.com</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <form class="contact-form" id="contactForm">
+
+                <div class="form-row">
+
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Your Name"
+                        required
+                    >
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Email Address"
+                        required
+                    >
+
+                </div>
+
+
+                <input
+                    type="tel"
+                    id="phone"
+                    placeholder="Phone Number"
+                    required
+                >
+
+
+                <select id="plan">
+
+                    <option value="">Select Membership</option>
+                    <option value="Free Trial">Free Trial</option>
+                    <option value="Starter">Starter</option>
+                    <option value="Quantum">Quantum</option>
+                    <option value="Infinity">Infinity</option>
+
+                </select>
+
+
+                <textarea
+                    id="message"
+                    placeholder="Tell us what you want to achieve..."
+                ></textarea>
+
+
+                <button type="submit" class="btn">
+                    Send Request →
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div class="footer-inner">
+
+        <div class="footer-logo">
+            NEON<span>FORGE</span>
+        </div>
+
+        <div class="footer-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+        <div>
+            © 2026 NeonForge
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- BACK TO TOP -->
+
+<a href="#home" class="top">
+    ↑
+</a>
+
+
+<script>
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+const menu = document.getElementById("menu");
+const navLinks = document.getElementById("navLinks");
+
+menu.addEventListener("click", function(){
+
+    navLinks.classList.toggle("active");
+
+});
+
+
+/* Close mobile menu after clicking */
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        navLinks.classList.remove("active");
+
+    });
+
+});
+
+
+/* =========================
+   PLAN BUTTON CONNECTION
+========================= */
+
+const planButtons =
+    document.querySelectorAll(".plan-btn");
+
+const planSelect =
+    document.getElementById("plan");
+
+planButtons.forEach(button => {
+
+    button.addEventListener("click", function(){
+
+        const selectedPlan =
+            this.getAttribute("data-plan");
+
+        planSelect.value = selectedPlan;
+
+    });
+
+});
+
+
+/* =========================
+   FORM
+========================= */
+
+const form =
+    document.getElementById("contactForm");
+
+form.addEventListener("submit", function(event){
+
+    event.preventDefault();
+
+    const name =
+        document.getElementById("name").value;
+
+    const selectedPlan =
+        document.getElementById("plan").value;
+
+    if(!selectedPlan){
+
+        alert(
+            "Please select a membership plan."
+        );
+
+        return;
+
+    }
+
+    alert(
+        "Thank you " +
+        name +
+        "! Your " +
+        selectedPlan +
+        " membership request has been received."
+    );
+
+    form.reset();
+
+});
+
+
+/* =========================
+   MOUSE 4D EFFECT
+========================= */
+
+const hero =
+    document.querySelector(".hero");
+
+const hyperSpace =
+    document.querySelector(".hyper-space");
+
+hero.addEventListener("mousemove", function(e){
+
+    const rect =
+        hero.getBoundingClientRect();
+
+    const x =
+        (e.clientX - rect.left) /
+        rect.width - .5;
+
+    const y =
+        (e.clientY - rect.top) /
+        rect.height - .5;
+
+    hyperSpace.style.transform =
+        `
+        rotateX(${y * -20}deg)
+        rotateY(${x * 25}deg)
+        `;
+});
+
+
+hero.addEventListener("mouseleave", function(){
+
+    hyperSpace.style.transform = "";
+
+});
+
+
+/* =========================
+   SCROLL REVEAL
+========================= */
+
+const revealItems =
+    document.querySelectorAll(
+        ".service, .trainer, .price-card, .testimonial, .stat"
+    );
+
+const observer =
+    new IntersectionObserver(
+        entries => {
+
+            entries.forEach(entry => {
+
+                if(entry.isIntersecting){
+
+                    entry.target.style.opacity = "1";
+                    entry.target.style.transform =
+                        "translateY(0)";
+
+                }
+
+            });
+
+        },
+        {
+            threshold:.15
+        }
+    );
+
+
+revealItems.forEach(item => {
+
+    item.style.opacity = "0";
+    item.style.transform = "translateY(35px)";
+    item.style.transition =
+        "opacity .7s ease, transform .7s ease";
+
+    observer.observe(item);
+
+});
+
+
+/* =========================
+   DYNAMIC YEAR
+========================= */
+
+document.querySelector("footer").innerHTML =
+`
+<div class="footer-inner">
+
+    <div class="footer-logo">
+        NEON<span>FORGE</span>
+    </div>
+
+    <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <div>
+        © ${new Date().getFullYear()} NeonForge
+    </div>
+
+</div>
+`;
+
+</script>
+
+</body>
+</html>
 ```
+
+Ab ye **small landing page nahi**, ek proper multi-section gym website hai. `index.html` ke naam se save karke browser mein open karo. **Pricing → Contact connection, navbar links, mobile menu, trial button, form, scroll effects aur 4D mouse interaction** sab included hain.
