@@ -1,345 +1,180 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AllPanel 7 ID</title>
+
+<title>QUANTUM GYM | 4D Fitness Experience</title>
 
 <style>
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial,sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
-    background:#042b23;
-    color:#fff;
-    overflow-x:auto;
+    font-family:Arial, Helvetica, sans-serif;
+    background:#03030a;
+    color:white;
+    overflow-x:hidden;
 }
 
-.container{
-    display:flex;
-    min-height:100vh;
+/* =========================
+   BACKGROUND
+========================= */
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(0,255,255,.15), transparent 25%),
+        radial-gradient(circle at 80% 70%, rgba(255,0,170,.14), transparent 30%),
+        radial-gradient(circle at 50% 50%, rgba(120,0,255,.08), transparent 35%);
+    z-index:-5;
 }
 
-.demo{
-    width:70%;
-    background:#111;
+/* Moving grid */
+
+.grid{
+    position:fixed;
+    inset:0;
+    background-image:
+        linear-gradient(rgba(0,255,255,.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,255,255,.08) 1px, transparent 1px);
+    background-size:60px 60px;
+    transform:perspective(500px) rotateX(60deg) scale(2);
+    transform-origin:center bottom;
+    animation:gridMove 8s linear infinite;
+    z-index:-4;
+    opacity:.35;
 }
 
-iframe{
+@keyframes gridMove{
+    from{
+        background-position:0 0;
+    }
+    to{
+        background-position:0 60px;
+    }
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+nav{
+    position:fixed;
+    top:0;
+    left:0;
     width:100%;
-    height:100vh;
-    border:none;
+    padding:20px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:1000;
+    background:rgba(3,3,10,.55);
+    backdrop-filter:blur(18px);
+    border-bottom:1px solid rgba(0,255,255,.15);
 }
 
-.right{
-    width:30%;
-    padding:30px 22px;
-    background:linear-gradient(180deg,#008f73,#043d33);
+.logo{
+    font-size:25px;
+    font-weight:900;
+    letter-spacing:4px;
+    color:#00ffff;
+    text-shadow:
+        0 0 10px #00ffff,
+        0 0 30px #00ffff;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:30px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-size:14px;
+    letter-spacing:1px;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#00ffff;
+    text-shadow:0 0 12px #00ffff;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height:100vh;
     display:flex;
     align-items:center;
     justify-content:center;
-}
-
-.box{
-    width:100%;
-    background:#07110f;
-    border:1px solid #00e8ad;
-    border-radius:22px;
-    padding:24px 18px;
     text-align:center;
-    box-shadow:0 0 30px rgba(0,232,173,.35);
+    position:relative;
+    padding:120px 20px 80px;
+    overflow:hidden;
 }
 
-.badge{
+.hero-content{
+    position:relative;
+    z-index:10;
+}
+
+.tag{
     display:inline-block;
-    background:#00e8ad;
-    color:#001f18;
+    border:1px solid #00ffff;
+    color:#00ffff;
     padding:10px 22px;
-    border-radius:30px;
-    font-weight:bold;
-    margin-bottom:16px;
+    border-radius:50px;
+    letter-spacing:4px;
+    font-size:12px;
+    margin-bottom:25px;
+    box-shadow:0 0 25px rgba(0,255,255,.25);
 }
 
 h1{
-    color:#00e8ad;
-    font-size:30px;
+    font-size:clamp(55px,10vw,130px);
+    line-height:.85;
     text-transform:uppercase;
-    margin-bottom:12px;
+    letter-spacing:-6px;
+    text-shadow:
+        0 0 10px rgba(255,255,255,.4),
+        0 0 40px rgba(0,255,255,.4);
 }
 
-.sub{
-    color:#ddd;
-    line-height:1.6;
-    margin-bottom:18px;
-    font-size:16px;
-}
-
-.process{
-    text-align:left;
-    background:linear-gradient(180deg,#07110f,#06483b);
-    border:1px solid #00e8ad;
-    border-radius:16px;
-    padding:18px;
-    margin:18px 0;
-}
-
-.process h2{
-    color:#00e8ad;
-    font-size:20px;
-    margin-bottom:12px;
-    text-align:center;
-}
-
-.process h3{
-    color:#fff;
-    font-size:18px;
-    margin:16px 0 8px;
-}
-
-.process p,
-.process li{
-    color:#ddd;
-    font-size:15px;
-    line-height:1.6;
-}
-
-.process ol{
-    padding-left:20px;
-}
-
-.manual-whatsapp,
-.signup{
+h1 span{
     display:block;
-    background:#00e8ad;
-    color:#001f18;
-    text-decoration:none;
-    padding:15px;
-    border-radius:14px;
-    font-size:20px;
-    font-weight:bold;
-    text-align:center;
-    box-shadow:0 0 18px rgba(0,232,173,.4);
+    color:#00ffff;
+    text-shadow:
+        0 0 10px #00ffff,
+        0 0 30px #00ffff,
+        0 0 70px #0088ff;
 }
 
-.manual-whatsapp{
-    margin:14px 0 8px;
-}
-
-.signup{
-    margin-top:16px;
-}
-
-.manual-whatsapp:hover,
-.signup:hover{
-    background:#00c996;
-}
-
-.features{
-    display:grid;
-    gap:12px;
-    margin:22px 0 18px;
-}
-
-.feature{
-    background:linear-gradient(90deg,#092a24,#06483b);
-    border:1px solid #00e8ad;
-    border-radius:14px;
-    padding:14px;
-    font-size:17px;
-    font-weight:bold;
-}
-
-.feature span{
-    color:#00e8ad;
-}
-
-.website-row{
-    display:flex;
-    justify-content:space-between;
-    gap:10px;
-    margin-top:18px;
-    font-weight:bold;
-    flex-wrap:wrap;
-}
-
-.website-row a{
-    text-decoration:none;
-    word-break:break-word;
-}
-
-.website,
-.whatsapp-small{
-    color:#00e8ad;
-}
-
-.trust{
-    margin-top:18px;
-    color:#ccc;
+.hero p{
+    max-width:650px;
+    margin:35px auto;
+    color:#aeb9c8;
+    font-size:18px;
     line-height:1.7;
 }
 
-.footer{
-    margin-top:20px;
-    color:#888;
-    font-size:12px;
-}
-
-/* MOBILE — Laptop jaisa same layout */
-@media(max-width:768px){
-
-    body{
-        overflow-x:auto;
-    }
-
-    .container{
-        width:1200px;
-        min-width:1200px;
-        flex-direction:row;
-    }
-
-    .demo{
-        width:70%;
-    }
-
-    .right{
-        width:30%;
-        padding:25px 18px;
-    }
-
-    iframe{
-        height:100vh;
-        min-height:700px;
-    }
-
-    h1{
-        font-size:28px;
-    }
-
-    .manual-whatsapp,
-    .signup{
-        font-size:19px;
-    }
-}
-</style>
-</head>
-
-<body>
-
-<div class="container">
-
-    <div class="demo">
-        <iframe src="https://www.allpanel7.com/?code=MAHA1991"></iframe>
-    </div>
-
-    <div class="right">
-
-        <div class="box">
-
-            <div class="badge">ALLPANEL7</div>
-
-            <h1>Get Your AllPanel7 ID</h1>
-
-            <p class="sub">
-                Choose the registration method that's most convenient for you and get started with AllPanel 7 today!
-            </p>
-
-            <div class="process">
-
-                <h2>Get Your AllPanel 7 ID – Your Choice!</h2>
-
-                <h3>✅ Manual ID</h3>
-
-                <p>
-                    Click the <strong>"WhatsApp Now"</strong> button and our team will create your ID for you.
-                </p>
-
-                <a class="manual-whatsapp"
-                   href="https://wa.me/+917980303785?text=Hello%20I%20want%20new%20manual%20ID"
-                   target="_blank">
-                    📲 WhatsApp Now
-                </a>
-
-                <h3>✅ Self-Registration</h3>
-
-                <p>
-                    Click the <strong>"Sign Up"</strong> button and follow these simple steps:
-                </p>
-
-                <ol>
-                    <li>Enter your mobile number.</li>
-                    <li>Create your username.</li>
-                    <li>Create your password and confirm it.</li>
-                    <li>The Signup Code is pre-filled as <strong>MAHA1991</strong>.</li>
-                    <li>Click <strong>"Sign Up"</strong> to complete your registration.</li>
-                </ol>
-
-                <a class="signup"
-                   href="https://www.allpanel7.com/?code=MAHA1991"
-                   target="_blank">
-                    📝 Sign Up
-                </a>
-
-            </div>
-
-            <div class="features">
-
-                <div class="feature">
-                    Minimum Deposit:
-                    <span>₹100 Only</span>
-                </div>
-
-                <div class="feature">
-                    Welcome Bonus:
-                    <span>10%</span>
-                </div>
-
-                <div class="feature">
-                    Auto and Manual Service:
-                    <span>Available</span>
-                </div>
-
-                <div class="feature">
-                    Quick Help:
-                    <span>24/7 Support Available</span>
-                </div>
-
-            </div>
-
-            <div class="website-row">
-
-                <a class="website"
-                   href="https://www.allpanel7.com/?code=MAHA1991"
-                   target="_blank">
-                    🌐 www.allpanel7.com/?code=MAHA1991
-                </a>
-
-                <a class="whatsapp-small"
-                   href="https://wa.me/+917980303785"
-                   target="_blank">
-                    💬 WhatsApp
-                </a>
-
-            </div>
-
-            <div class="trust">
-                ✅ Trusted Manual Support<br>
-                ✅ Simple Process<br>
-                ✅ Fast Response
-            </div>
-
-            <div class="footer">
-                18+ Only | Play Responsibly | Follow Your Local Laws | T&amp;C Apply
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
-
-</body>
-</html>
+.btn{
+    display:inline-block;
+    padding:16px 35px;
+    margin:8px;
+    col
+```
