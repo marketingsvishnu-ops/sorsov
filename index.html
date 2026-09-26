@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -176,5 +175,570 @@ h1 span{
     display:inline-block;
     padding:16px 35px;
     margin:8px;
-    col
+    color:#020207;
+    background:#00ffff;
+    text-decoration:none;
+    font-weight:bold;
+    border-radius:50px;
+    box-shadow:
+        0 0 15px #00ffff,
+        0 0 40px rgba(0,255,255,.5);
+    transition:.4s;
+}
+
+.btn:hover{
+    transform:translateY(-5px) scale(1.05);
+    box-shadow:
+        0 0 30px #00ffff,
+        0 0 80px #00ffff;
+}
+
+.btn.alt{
+    background:transparent;
+    color:white;
+    border:1px solid rgba(255,255,255,.4);
+    box-shadow:none;
+}
+
+/* =========================
+   4D CORE
+========================= */
+
+.core{
+    position:absolute;
+    width:300px;
+    height:300px;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    perspective:1000px;
+    opacity:.35;
+}
+
+.hypercube{
+    position:absolute;
+    width:180px;
+    height:180px;
+    left:60px;
+    top:60px;
+    transform-style:preserve-3d;
+    animation:hyperRotate 8s linear infinite;
+}
+
+.cube{
+    position:absolute;
+    width:180px;
+    height:180px;
+    border:2px solid #00ffff;
+    box-shadow:
+        inset 0 0 30px rgba(0,255,255,.2),
+        0 0 30px rgba(0,255,255,.5);
+}
+
+.cube1{
+    transform:translateZ(90px);
+}
+
+.cube2{
+    transform:rotateY(90deg) translateZ(90px);
+}
+
+.cube3{
+    transform:rotateY(180deg) translateZ(90px);
+}
+
+.cube4{
+    transform:rotateY(-90deg) translateZ(90px);
+}
+
+.cube5{
+    transform:rotateX(90deg) translateZ(90px);
+}
+
+.cube6{
+    transform:rotateX(-90deg) translateZ(90px);
+}
+
+/* Inner cube */
+
+.inner{
+    position:absolute;
+    width:100px;
+    height:100px;
+    left:40px;
+    top:40px;
+    border:2px solid #ff00dd;
+    transform-style:preserve-3d;
+    animation:innerRotate 5s linear infinite reverse;
+}
+
+.inner div{
+    position:absolute;
+    inset:0;
+    border:2px solid #ff00dd;
+    box-shadow:0 0 25px #ff00dd;
+}
+
+.inner div:nth-child(1){
+    transform:translateZ(50px);
+}
+
+.inner div:nth-child(2){
+    transform:rotateY(90deg) translateZ(50px);
+}
+
+.inner div:nth-child(3){
+    transform:rotateY(180deg) translateZ(50px);
+}
+
+.inner div:nth-child(4){
+    transform:rotateY(-90deg) translateZ(50px);
+}
+
+.inner div:nth-child(5){
+    transform:rotateX(90deg) translateZ(50px);
+}
+
+.inner div:nth-child(6){
+    transform:rotateX(-90deg) translateZ(50px);
+}
+
+@keyframes hyperRotate{
+    0%{
+        transform:rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    }
+    100%{
+        transform:rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+    }
+}
+
+@keyframes innerRotate{
+    0%{
+        transform:rotateX(0deg) rotateY(0deg);
+    }
+    100%{
+        transform:rotateX(-360deg) rotateY(360deg);
+    }
+}
+
+/* =========================
+   PARTICLES
+========================= */
+
+.particle{
+    position:absolute;
+    width:5px;
+    height:5px;
+    border-radius:50%;
+    background:#00ffff;
+    box-shadow:0 0 15px #00ffff;
+    animation:float 5s infinite ease-in-out;
+}
+
+.p1{left:10%;top:30%;}
+.p2{left:20%;top:70%;animation-delay:1s;}
+.p3{left:85%;top:25%;animation-delay:2s;}
+.p4{left:75%;top:75%;animation-delay:3s;}
+.p5{left:50%;top:15%;animation-delay:1.5s;}
+.p6{left:90%;top:55%;animation-delay:2.5s;}
+
+@keyframes float{
+    0%,100%{
+        transform:translate3d(0,0,0) scale(1);
+    }
+    50%{
+        transform:translate3d(30px,-80px,100px) scale(2);
+    }
+}
+
+/* =========================
+   SECTION
+========================= */
+
+section{
+    padding:120px 8%;
+    position:relative;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.section-title small{
+    color:#00ffff;
+    letter-spacing:5px;
+}
+
+.section-title h2{
+    font-size:55px;
+    margin-top:15px;
+}
+
+/* =========================
+   4D CARDS
+========================= */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+    perspective:1000px;
+}
+
+.card{
+    position:relative;
+    padding:45px 30px;
+    min-height:280px;
+    background:linear-gradient(
+        145deg,
+        rgba(255,255,255,.08),
+        rgba(255,255,255,.015)
+    );
+    border:1px solid rgba(0,255,255,.25);
+    border-radius:25px;
+    overflow:hidden;
+    transform-style:preserve-3d;
+    transition:.5s;
+    backdrop-filter:blur(15px);
+}
+
+.card:hover{
+    transform:
+        rotateX(10deg)
+        rotateY(-10deg)
+        translateZ(40px)
+        scale(1.03);
+    border-color:#00ffff;
+    box-shadow:
+        0 30px 70px rgba(0,0,0,.5),
+        0 0 40px rgba(0,255,255,.25);
+}
+
+.card::before{
+    content:"";
+    position:absolute;
+    width:150px;
+    height:150px;
+    background:#00ffff;
+    filter:blur(80px);
+    opacity:.12;
+    right:-60px;
+    top:-60px;
+}
+
+.card .icon{
+    font-size:50px;
+    margin-bottom:25px;
+    transform:translateZ(40px);
+}
+
+.card h3{
+    font-size:25px;
+    margin-bottom:15px;
+    transform:translateZ(30px);
+}
+
+.card p{
+    color:#9da9b8;
+    line-height:1.7;
+    transform:translateZ(20px);
+}
+
+/* =========================
+   STATS
+========================= */
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.stat{
+    text-align:center;
+    padding:40px 15px;
+    border:1px solid rgba(255,255,255,.1);
+    border-radius:20px;
+    background:rgba(255,255,255,.025);
+    transition:.4s;
+}
+
+.stat:hover{
+    transform:translateY(-12px) rotateX(8deg);
+    border-color:#ff00dd;
+    box-shadow:0 0 40px rgba(255,0,221,.2);
+}
+
+.stat h3{
+    font-size:50px;
+    color:#00ffff;
+}
+
+.stat p{
+    color:#8f9aaa;
+    margin-top:8px;
+}
+
+/* =========================
+   PRICING
+========================= */
+
+.pricing{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+    perspective:1200px;
+}
+
+.price{
+    padding:45px 30px;
+    border-radius:25px;
+    background:rgba(255,255,255,.035);
+    border:1px solid rgba(255,255,255,.1);
+    transform-style:preserve-3d;
+    transition:.5s;
+}
+
+.price:hover{
+    transform:
+        rotateY(12deg)
+        translateZ(35px);
+    border-color:#ff00dd;
+    box-shadow:0 0 50px rgba(255,0,221,.2);
+}
+
+.price h3{
+    color:#00ffff;
+    font-size:22px;
+}
+
+.price .amount{
+    font-size:55px;
+    margin:20px 0;
+    font-weight:bold;
+}
+
+.price ul{
+    list-style:none;
+    color:#aab2bf;
+    line-height:2.2;
+    margin-bottom:25px;
+}
+
+.price li::before{
+    content:"✦ ";
+    color:#00ffff;
+}
+
+/* =========================
+   CTA
+========================= */
+
+.cta{
+    text-align:center;
+    padding:130px 20px;
+    overflow:hidden;
+}
+
+.cta h2{
+    font-size:clamp(45px,7vw,90px);
+    text-transform:uppercase;
+    line-height:.9;
+}
+
+.cta h2 span{
+    color:#ff00dd;
+    text-shadow:0 0 30px #ff00dd;
+}
+
+.cta p{
+    max-width:600px;
+    margin:30px auto;
+    color:#9ba5b4;
+    line-height:1.7;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    padding:35px 8%;
+    border-top:1px solid rgba(255,255,255,.08);
+    text-align:center;
+    color:#707987;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:900px){
+
+    nav ul{
+        display:none;
+    }
+
+    .cards,
+    .pricing{
+        grid-template-columns:1fr;
+    }
+
+    .stats{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .core{
+        transform:translate(-50%,-50%) scale(.7);
+    }
+}
+
+@media(max-width:600px){
+
+    section{
+        padding:90px 6%;
+    }
+
+    .stats{
+        grid-template-columns:1fr;
+    }
+
+    h1{
+        letter-spacing:-3px;
+    }
+
+    .hero p{
+        font-size:15px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="grid"></div>
+
+<!-- PARTICLES -->
+<div class="particle p1"></div>
+<div class="particle p2"></div>
+<div class="particle p3"></div>
+<div class="particle p4"></div>
+<div class="particle p5"></div>
+<div class="particle p6"></div>
+
+<!-- NAVBAR -->
+<nav>
+    <div class="logo">QUANTUM</div>
+
+    <ul>
+        <li><a href="#home">HOME</a></li>
+        <li><a href="#features">FEATURES</a></li>
+        <li><a href="#stats">STATS</a></li>
+        <li><a href="#pricing">MEMBERSHIP</a></li>
+    </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+
+    <div class="core">
+
+        <div class="hypercube">
+
+            <div class="cube cube1"></div>
+            <div class="cube cube2"></div>
+            <div class="cube cube3"></div>
+            <div class="cube cube4"></div>
+            <div class="cube cube5"></div>
+            <div class="cube cube6"></div>
+
+            <div class="inner">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="hero-content">
+
+        <div class="tag">
+            FUTURE FITNESS SYSTEM
+        </div>
+
+        <h1>
+            ENTER
+            <span>4D</span>
+        </h1>
+
+        <p>
+            Experience training beyond ordinary dimensions.
+            Advanced workouts, immersive technology and next-generation
+            performance systems designed to transform your body.
+        </p>
+
+        <a href="#pricing" class="btn">
+            JOIN THE FUTURE
+        </a>
+
+        <a href="#features" class="btn alt">
+            EXPLORE
+        </a>
+
+    </div>
+
+</section>
+
+<!-- FEATURES -->
+<section id="features">
+
+    <div class="section-title">
+        <small>DIMENSIONAL TRAINING</small>
+        <h2>THE 4D EXPERIENCE</h2>
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+            <div class="icon">⚡</div>
+            <h3>Hyper Training</h3>
+            <p>
+                Intelligent workout systems designed to challenge
+                strength, speed, endurance and reaction time.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🧠</div>
+            <h3>Neural Fitness</h3>
+            <p>
+                Train coordination, reaction and movement patterns
+                using advanced performance exercises.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🌌</div>
+            <h3>Immersive Zone</h3>
+            <p>
+                A futuristic training environment combining lighting,
+                sound and movement for an immersive experience.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- STATS -->
+<section id="stats">
+
+    <div class="section-title">
+        <small>QUANTUM PERFO
 ```
